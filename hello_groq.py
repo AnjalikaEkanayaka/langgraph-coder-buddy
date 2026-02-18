@@ -10,7 +10,6 @@ def main():
         raise SystemExit("ERROR: GROQ_API_KEY not found. Put it in .env (same folder).")
 
     # A lightweight, common Groq model name.
-    # If Groq rejects it, we’ll switch to one available on your account.
     llm = ChatGroq(
         model="llama-3.1-8b-instant",
         temperature=0.2,
