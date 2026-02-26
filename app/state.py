@@ -13,5 +13,11 @@ class GraphState(TypedDict, total=False):
     # For tracking which task is currently being worked on Later
     current_task_index: int
 
+    # Where files will be written
+    output_dir: str
+
+    # Lists of files created (for printing summary)
+    created_files: List[str]
+
     # Debug / status info
     error: Optional[str]

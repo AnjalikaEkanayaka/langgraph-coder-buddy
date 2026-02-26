@@ -15,7 +15,7 @@ def architect_node(state):
         state["tasks"] = []
         return state
 
-    llm = get_llm()
+    llm = get_llm(max_tokens=1500)
 
     # We ask the LLM to output STRICT JSON so our code can parse it.
     # This is a key skill in agent systems:

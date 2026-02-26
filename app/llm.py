@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 
-def get_llm():
+def get_llm(model="llama-3.1-8b-instant", temperature=0.2, max_tokens=800):
     """
     Creates and returns the Groq chat model object.
     We keep it in one place so later we can swap Groq -> another API easily.
@@ -19,8 +19,8 @@ def get_llm():
     #   0.2 = a little creative but still stable
     
     return ChatGroq(
-        model="llama-3.1-8b-instant",
-        temperature=0.2,
+        model=model,
+        temperature=temperature,
         api_key=api_key,
-        max_tokens=800  
+        max_tokens=max_tokens  
     )
