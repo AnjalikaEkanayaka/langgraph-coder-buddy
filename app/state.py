@@ -4,7 +4,7 @@ class GraphState(TypedDict, total=False):
     # User request (input)
     user_request: str
 
-    # Output from the planner (we’ll keep as text for now)
+    # Output from the planner 
     plan: str
 
     # Architect output: List of tasks (each task = one file to generate)
@@ -21,3 +21,10 @@ class GraphState(TypedDict, total=False):
 
     # Debug / status info
     error: Optional[str]
+
+    # Reviewer -> Coder feedback if a file is wrong
+    fix_file_path: str
+    fix_reason: str
+
+    # Prevent endless loops
+    fix_attempts: int

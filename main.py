@@ -20,7 +20,12 @@ def main():
         "user_request": user_request,
         "output_dir": output_dir,
         "created_files": [],
-        "current_task_index": 0
+        "current_task_index": 0,
+
+        # Reviewer system state
+        "fix_file_path": "",
+        "fix_reason": "",
+        "fix_attempts": 0
     }
 
     final_state = graph.invoke(initial_state)

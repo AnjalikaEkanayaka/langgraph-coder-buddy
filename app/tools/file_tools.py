@@ -30,3 +30,10 @@ def write_text_file(base_dir, relative_path, content):
         f.write(content)
 
     return target_path
+
+def read_text_file(base_dir, relative_path):
+    target_path = safe_join(base_dir, relative_path)
+    if not os.path.exists(target_path):
+        return None
+    with open(target_path, "r", encoding="utf-8") as f:
+        return f.read()

@@ -1,6 +1,9 @@
 from app.llm import get_llm
 
 def planner_node(state):
+
+    print("[Planner] Creating plan...")
+
     """
     Planner Agent:
     - reads user_request
@@ -34,8 +37,13 @@ RULES:
         response = llm.invoke(prompt)
         state["plan"] = response.content
         state["error"] = None
+
+        print("[Planner] Plan ready.")
+        
     except Exception as ex:
         state["plan"] = ""
         state["error"] = str(ex)
 
     return state
+
+print("[Planner] Plan ready.")

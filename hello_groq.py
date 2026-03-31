@@ -7,7 +7,7 @@ def main():
 
     api_key = os.getenv("GROQ_API_KEY", "").strip()
     if not api_key:
-        raise SystemExit("ERROR: GROQ_API_KEY not found. Put it in .env (same folder).")
+        raise SystemExit("ERROR: GROQ_API_KEY not found. Put it in .env .")
 
     # A lightweight, common Groq model name.
     llm = ChatGroq(
